@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ user?.name }}</h5>
+      <p class="card-text">Age: {{ user?.age }}</p>
+      <p class="card-text">Email: {{ user?.email }}</p>
+      <a [routerLink]="['/editUser', user?._id]" class="btn btn-primary">Edit</a>
+      <a (click)="deleteUser()" class="btn btn-danger">Delete</a>
+    </div>
+  </div>

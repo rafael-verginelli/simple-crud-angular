@@ -1,0 +1,60 @@
+<div class="container">
+  <h2 *ngIf="isEditMode">Edit User</h2>
+  <h2 *ngIf="!isEditMode">Create User</h2>
+
+  <form (ngSubmit)="saveUser()">
+    <div class="form-group">
+      <label for="inputName">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        [(ngModel)]="user.name"
+        aria-describedby="nameHelp"
+        placeholder="Enter name"
+        required="true"
+      />
+      <small id="nameHelp" class="form-text text-muted"
+        >This is the user's name.</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="inputAge">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        name="age"
+        [(ngModel)]="user.age"
+        aria-describedby="ageHelp"
+        placeholder="Enter age"
+        required="true"
+      />
+      <small id="ageHelp" class="form-text text-muted"
+        >This is the user's age.</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        required="true"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >This is the user's email address.</small
+      >
+    </div>
+
+    <button *ngIf="!isEditMode" type="submit" class="btn btn-primary">Create</button>
+    <button *ngIf="isEditMode" type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
