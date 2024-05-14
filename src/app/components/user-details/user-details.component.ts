@@ -48,7 +48,6 @@ export class UserDetailsComponent implements OnInit {
       return;
     }
     
-    console.log('Deleting user', this.user);
     this.userService.deleteUser(this.user._id).subscribe(result => {
       this.router.navigate(['/users']);
     });
